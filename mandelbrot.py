@@ -1,8 +1,7 @@
-import Tkinter
-from Tkconstants import *
+from Tkinter import Tk, Canvas, mainloop
 
-tk = Tkinter.Tk()
-w = Tkinter.Canvas(tk, width=600, height=600)
+tk = Tk()
+w = Canvas(tk, width=600, height=600)
 
 colors = {
     0: 'white', 
@@ -56,4 +55,4 @@ for x in range(0,600):
 
 print "Complete!"
 
-tk.mainloop()
+mainloop()
