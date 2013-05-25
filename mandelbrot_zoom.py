@@ -42,12 +42,28 @@ def mandel(c):
     else:
         return 99
 
+def get_decimal(m):
+    while True:
+        try:
+            x = float(raw_input(m))
+            return x
+        except ValueError:
+            print 'Enter a decimal number.'      
+
+loX = get_decimal('Minimum X: ')
+hiX = get_decimal('Maximum X: ')
+loY = get_decimal('Minimum Y: ')
+hiY = get_decimal('Maximum Y: ')
+
+scaleX = 600.0/(hiX - loX)
+scaleY = 600.0/(hiY - loY)
+
 print "Drawing..."
 
 for x in range(0,600):
-    real = x / 200.0 - 2.2
+    real = loX + x / scaleX
     for y in range(0, 600):
-        imag = y / 200.0 - 1.5
+        imag = loY + y / scaleY
         c = complex(real, imag)
         p = mandel(c)
         w.create_line(x, 600-y, x+1, 601-y, fill=colors[p])
