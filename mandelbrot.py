@@ -42,7 +42,7 @@ def mandel(c):
     else:
         return 99
 
-print "Drawing..."
+print('Drawing...')
 
 for x in range(0,600):
     real = x / 200.0 - 2.2
@@ -53,5 +53,5 @@ for x in range(0,600):
         w.create_line(x, 600-y, x+1, 601-y, fill=colors[p])
         w.pack()
 
-print "Complete!"
+print ('Complete!')
 mainloop()
