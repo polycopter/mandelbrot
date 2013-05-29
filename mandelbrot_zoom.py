@@ -45,10 +45,10 @@ def mandel(c):
 def get_decimal(m):
     while True:
         try:
-            x = float(raw_input(m))
+            x = float(input(m))
             return x
         except ValueError:
-            print 'Enter a decimal number.'      
+            print('Enter a decimal number.')      
 
 loX = get_decimal('Minimum X: ')
 hiX = get_decimal('Maximum X: ')
@@ -58,7 +58,7 @@ hiY = get_decimal('Maximum Y: ')
 scaleX = 600.0/(hiX - loX)
 scaleY = 600.0/(hiY - loY)
 
-print "Drawing..."
+print('Drawing...')
 
 for x in range(0,600):
     real = loX + x / scaleX
@@ -69,5 +69,5 @@ for x in range(0,600):
         w.create_line(x, 600-y, x+1, 601-y, fill=colors[p])
         w.pack()
 
-print "Complete!"
+print('Complete!')
 mainloop()
